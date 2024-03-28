@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./register.js"></script>
+    <title>Registration Form</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #brokersFieldset {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 80%;
+            }
+        }
+        .aum {
+            margin-top: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input,
+            button {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2 class="center">Register</h2>
+        <form id="registrationForm">
+            <label for="organizationType">Organization Type:</label>
+            <select id="organizationType" name="organizationType" required>
+                <option value="">Select...</option>
+                <option value="Fund">Fund</option>
+                <option value="Institution">Institution</option>
+                <option value="FamilyOffice">Family office</option>
+                <option value="Private">Private</option>
+            </select>
+
+            <div id="hiddentForm" hidden>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" placeholder="Enter your email address" required>
+                <input id="companyName" type="text" name="companyName" placeholder="Company Name (if not a private investor)" required>
+    
+                <fieldset id="brokersFieldset">
+                    <legend>Brokers I work with (select all that apply):</legend>
+                    <label><input type="checkbox" name="brokers" value="meitav" required> Meitav</label>
+                    <label><input type="checkbox" name="brokers" value="IBI"> IBI</label>
+                    <label><input type="checkbox" name="brokers" value="Leader"> Leader</label>
+                    <label><input type="checkbox" name="brokers" value="Psagot"> Psagot</label>
+                    <label><input type="checkbox" name="brokers" value="none" checked> None</label>
+                </fieldset>
+    
+                <select class="aum" name="aum" required>
+                    <option value="">AUM (Assets Under Management)</option>
+                    <option value="under1m">Under $1M</option>
+                    <option value="1mTo10m">$1M to $10M</option>
+                    <option value="10mTo100m">$10M to $100M</option>
+                    <option value="over100m">Over $100M</option>
+                </select>
+    
+                <input type="text" name="id" placeholder="ID" required>
+                <input type="password" placeholder="Create a password" required>
+                <input type="password" placeholder="Confirm your password" required>
+                <input type="file" id="incorporationLetter" name="incorporationLetter" accept=".pdf" required>
+    
+                <div class="center">
+                    <input type="checkbox" id="termsCheckbox">
+                    <label for="termsCheckbox">
+                        I agree to the terms and conditions.
+                    </label>
+            </div>
+
+            
+            </div>
+            <button type="submit">Register</button>
+            <p class="center">Already have an account? <a href="../login/login.html">Login</a></p>
+        </form>
+    </div>
+
+    <script>
+    </script>
+
+</body>
+
+</html>

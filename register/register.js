@@ -1,8 +1,6 @@
     // JavaScript validation
     document.getElementById('registrationForm').onsubmit = function(event) {
         var termsChecked = document.getElementById('termsCheckbox').checked;
-        
-
         organizationType
         if (!termsChecked) {
             alert('Please agree to the terms and conditions to proceed.');
